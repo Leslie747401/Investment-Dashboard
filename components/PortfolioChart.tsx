@@ -51,7 +51,7 @@ export default function PortfolioChart() {
   return (
       <div className="space-y-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-black text-lg font-medium">Portfolio Return</h2>
+          <h2 className="text-black text-sm">Portfolio Return</h2>
           <RadioGroup 
             value={selectedPeriod} 
             onValueChange={setSelectedPeriod}
