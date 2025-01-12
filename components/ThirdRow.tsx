@@ -1,9 +1,12 @@
 import React from 'react'
-import PortfolioStock from './PortfolioStock'
-import LastPortfolioStock from './LastPortfolioStock'
 import MarketStock from './MarketStock'
 import LastMarketStock from './LastMarketStock'
 import Link from 'next/link'
+import google from '../public/Google.svg'
+import meta from '../public/Meta.svg'
+import macdonalds from '../public/macdonalds.svg'
+import apple from '../public/apple.svg'
+import microsoft from '../public/microsoft.svg'
 
 export default function ThirdRow() {
   return (
@@ -25,11 +28,72 @@ export default function ThirdRow() {
 
             {/* List */}
             <div className='flex flex-col'>
-                <MarketStock/>
-                <MarketStock/>
-                <MarketStock/>
-                <MarketStock/>
-                <LastMarketStock/>
+
+                <MarketStock
+                  logo={apple}
+                  ticker='AAPL'
+                  company='Apple Inc'
+                  marketcap='3.58T'
+                  price={236.85}
+                  change={-2.41}
+                  volume={336}
+                  pe={26.67}
+                  sector='Tech'
+                  recommendation='Strong Buy'                
+                />
+
+                <MarketStock
+                  logo={microsoft}
+                  ticker='MSFT'
+                  company='Microsoft Corp'
+                  marketcap='3.11T'
+                  price={418.95}
+                  change={-1.32}
+                  volume={336}
+                  pe={26.67}
+                  sector='Tech'
+                  recommendation='Strong Buy'                
+                />
+
+                <MarketStock
+                  logo={macdonalds}
+                  ticker='MCD'
+                  company={`McDonald's Corp`}
+                  marketcap='202.3B'
+                  price={282.31}
+                  change={-1.57}
+                  volume={336}
+                  pe={26.67}
+                  sector='Tech'
+                  recommendation='Strong Buy'                
+                />
+
+                <MarketStock
+                  logo={meta}
+                  ticker='META'
+                  company='Meta Platforms Inc'
+                  marketcap='1.55T'
+                  price={615.86}
+                  change={+0.84}
+                  volume={336}
+                  pe={26.67}
+                  sector='Tech'
+                  recommendation='Strong Buy'                
+                />
+
+                <LastMarketStock
+                  logo={google}
+                  ticker='GOOG'
+                  company='Alphabet Inc'
+                  marketcap='2.35T'
+                  price={193.17}
+                  change={-1.14}
+                  volume={336}
+                  pe={26.67}
+                  sector='Tech'
+                  recommendation='Strong Buy'                
+                />
+
             </div>
         
         </div>

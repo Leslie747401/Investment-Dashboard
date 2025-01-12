@@ -1,6 +1,13 @@
 import React from 'react'
 import PortfolioChart from './PortfolioChart'
 import Link from 'next/link'
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+  } from "@/components/ui/tooltip"
+  
 
 export default function FirstRow() {
   return (
@@ -39,12 +46,59 @@ export default function FirstRow() {
                 <p><span className='text-4xl font-medium pl-1'>1800.00 </span><span className='text-[#969696]'>USDT</span></p>
             </div>
 
-            <div className='flex flex-col gap-3 p-4 roundex-xl bg-[#f8f8f8] border rounded-xl'>
+            <div className='flex flex-col gap-4 p-4 roundex-xl bg-[#f8f8f8] border rounded-xl'>
+
                 <div className='flex justify-between items-center'>
                     <p className='text-sm'>Portfolio Allocation</p>
                     <Link href={'/Allocation'}><p className='text-sm px-3 py-1 rounded-full border bg-white cursor-pointer hover:bg-zinc-100 transition-all duration-300'>View</p></Link>
                 </div>
-                <p><span className='text-4xl font-medium pl-1'>2189 </span><span className='text-[#969696]'>SHARES</span></p>
+
+                <div className='w-full h-7 flex rounded-full border bg-white'>
+                    
+                    <TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger asChild>
+                                <div className='w-[50%] h-full bg-[#2e2e2e] rounded-l-full cursor-pointer'></div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>NKE: 50%</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider>
+
+                    <TooltipProvider>
+                    <Tooltip>
+                        <TooltipTrigger asChild>
+                            <div className='w-[30%] h-full bg-[#4e4e4e] cursor-pointer'></div>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                        <p>GOOGL: 30%</p>
+                        </TooltipContent>
+                    </Tooltip>
+                    </TooltipProvider>
+                    <TooltipProvider>
+                    <Tooltip>
+                        <TooltipTrigger asChild>
+                            <div className='w-[10%] h-full bg-[#757575] cursor-pointer'></div>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                        <p>META: 10%</p>
+                        </TooltipContent>
+                    </Tooltip>
+                    </TooltipProvider>
+                    <TooltipProvider>
+                    <Tooltip>
+                        <TooltipTrigger asChild>
+                            <div className='w-[10%] h-full bg-[#9a9a9a] rounded-r-full cursor-pointer'></div>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                        <p>MCD: 10%</p>
+                        </TooltipContent>
+                    </Tooltip>
+                    </TooltipProvider>
+
+                </div>
+
             </div>
 
         </div>

@@ -1,6 +1,11 @@
 import LastPortfolioStock from "@/components/LastPortfolioStock";
 import Navbar from "@/components/Navbar";
 import PortfolioStock from "@/components/PortfolioStock";
+import google from '../../public/Google.svg'
+import meta from '../../public/Meta.svg'
+import macdonalds from '../../public/macdonalds.svg'
+import apple from '../../public/apple.svg'
+import microsoft from '../../public/microsoft.svg'
 
 export default function Portfolio() {
   return (
@@ -29,11 +34,56 @@ export default function Portfolio() {
 
             {/* List */}
             <div className='flex flex-col'>
-                <PortfolioStock/>
-                <PortfolioStock/>
-                <PortfolioStock/>
-                <PortfolioStock/>
-                <LastPortfolioStock/>
+            <PortfolioStock
+                    logo={apple}
+                    ticker='AAPL'
+                    company='Apple Inc'
+                    shareamt={20}
+                    price={236.85}
+                    change={-2.41}
+                    currentvalue={2972.40}
+                />
+
+                <PortfolioStock
+                    logo={microsoft}
+                    ticker='MSFT'
+                    company='Microsoft Corp'
+                    shareamt={40}
+                    price={418.95}
+                    change={-1.32}
+                    currentvalue={2972.40}
+                />
+
+                <PortfolioStock
+                    logo={macdonalds}
+                    ticker='MCD'
+                    company={`McDonald's Corp`}
+                    shareamt={25}
+                    price={282.31}
+                    change={-1.57}
+                    currentvalue={2972.40}
+                />
+
+                <PortfolioStock
+                    logo={meta}
+                    ticker='META'
+                    company='Meta Platforms Inc'
+                    shareamt={10}
+                    price={615.86}
+                    change={+0.84}
+                    currentvalue={2972.40}
+                />
+
+                <LastPortfolioStock
+                    logo={google}
+                    ticker='GOOG'
+                    company='Alphabet Inc'
+                    shareamt={5}
+                    price={193.17}
+                    change={-1.14}
+                    currentvalue={2972.40}
+                />
+
             </div>
         
         </div>

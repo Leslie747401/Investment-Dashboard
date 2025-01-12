@@ -1,16 +1,29 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import React from 'react'
 import apple from '../public/apple.svg'
 
-export default function MarketStock() {
+export default function MarketStock(
+    props : {
+        logo : StaticImageData;
+        ticker : string;
+        company: string;
+        marketcap : string;
+        price: number;
+        change: number;
+        volume: number;
+        pe: number;
+        sector: string;
+        recommendation: string;
+    }){
+
   return (
         <div className='flex gap-2 justify-between px-1 border-b py-3'>
 
             <div className='flex gap-3'>
 
-                <div className='p-3 border rounded-full bg-[#dadada]'>
+                <div className='p-3 border rounded-full bg-white'>
                     <Image
-                        src={apple}
+                        src={props.logo}
                         width={24}
                         height={24}
                         alt=''
@@ -18,8 +31,8 @@ export default function MarketStock() {
                 </div>
 
                 <div className='flex flex-col justify-center'>
-                    <p>AAPL</p>
-                    <p className='text-xs text-[#919191]'>Apple Inc.</p>
+                    <p>{props.ticker}</p>
+                    <p className='text-xs text-[#919191]'>{props.company}</p>
                 </div>
 
             </div>
@@ -28,36 +41,36 @@ export default function MarketStock() {
 
                 <div className='flex flex-col items-center gap-1'>
                     <p className='text-xs text-[#939393]'>Market Cap</p>
-                    <p className='font-medium'>3.58T</p>
+                    <p className='font-medium'>{props.marketcap}</p>
                 </div>
 
                 <div className='flex flex-col items-center gap-1'>
                     <p className='text-xs text-[#939393]'>Price</p>
-                    <p className='font-medium'>$148.79</p>
+                    <p className='font-medium'>${props.price}</p>
                 </div>
 
                 <div className='flex flex-col items-center gap-1'>
                     <p className='text-xs text-[#939393]'>Change</p>
-                    <p className='font-medium'>-2.25%</p>
+                    <p className={`${props.change < 0 ? 'text-red-500' : 'text-green-500'} font-medium`}>{props.change}%</p>
                 </div>
 
                 <div className='flex flex-col items-center gap-1'>
-                    <p className='text-xs text-[#939393]'>Volumne</p>
-                    <p className='font-medium'>336M</p>
+                    <p className='text-xs text-[#939393]'>Volume</p>
+                    <p className='font-medium'>{props.volume}M</p>
                 </div>
 
                 <div className='flex flex-col items-center gap-1'>
                     <p className='text-xs text-[#939393]'>P/E</p>
-                    <p className='font-medium'>34.59</p>
+                    <p className='font-medium'>{props.pe}</p>
                 </div>
 
                 <div className='flex flex-col items-center gap-1'>
                     <p className='text-xs text-[#939393]'>Sector</p>
-                    <p className='font-medium'>Tech</p>
+                    <p className='font-medium'>{props.sector}</p>
                 </div>
 
                 <div className='flex flex-col items-center justify-center gap-1'>
-                    <p className='text-xs text-green-500 bg-green-300 px-2 py-1 rounded-full border'>Strong Buy</p>
+                    <p className='text-xs text-green-500 bg-green-300 px-2 py-1 rounded-full border'>{props.recommendation}</p>
                 </div>
 
             </div>
